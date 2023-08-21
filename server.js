@@ -1,6 +1,7 @@
 let express =require("express")
 let {MongoClient}=require('mongodb')
 let App = express()
+App.use(express.static('Public'))
 let db
 async function go(){
   let client= new MongoClient('mongodb+srv://TodoAppUser:timmovintage@cluster0.glbfvsn.mongodb.net/TodoApp?retryWrites=true&w=majority')
@@ -47,7 +48,7 @@ App.get('/',function(req,res){
         </ul>
         
       </div>
-      
+      <script src ="/browser.js"></script>
     </body>
     </html>`)
   })
