@@ -1,4 +1,4 @@
- function Itemlist(item){
+ function Itemlist(){
     return `<li class="list-group-item list-group-item-action d-flex align-items-center justify-content-between">
     <span class="item-text">${item.text}</span>
     <div>
@@ -7,6 +7,10 @@
     </div>
   </li>`
  }
+ let ourHTML=items.map(function(item){
+   return Itemlist(item)
+ }).join('')
+ document.getElementById("item-list").insertAdjacentHTML("beforeend",ourHTML)
 //create feature
 let createField=document.getElementById("create-field")
 document.getElementById("create-form").document.addEventListener("submit",function(e){
